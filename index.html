@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Vonx</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="" content="">
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="images/logo.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+    <script src='../kit.fontawesome.com/a076d05399.html' crossorigin='anonymous'></script>
+	 <!-- font awesome style -->
+	 <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	  <!-- bootstrap core css -->
+	  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<!-- Load google font
+	================================================== -->
+	<script type="text/javascript">
+		WebFontConfig = {
+			google: { families: [ 'Catamaran:300,400,600,700', 'Raleway:100,700', 'Roboto:700,900'] }
+		};
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + 
+			'://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})();
+	</script>
+
+	<!-- Load other scripts
+	================================================== -->
+	<script type="text/javascript">
+		var _html = document.documentElement;
+		_html.className = _html.className.replace("no-js","js");
+	</script>
+	
+	<style>
+html {
+  scroll-behavior: smooth;
+}
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  background-color:#fff;
+  border-radius:5px;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+.dropdown-options a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+  padding:20px 40px;
+}
+
+.dropdown-options a:hover {
+  color: #0a0a23;
+  background-color: #ddd;
+  border-radius:5px;
+}
+.arrow {
+  border: solid;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-left: 5px;
+  margin-bottom: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.flex-parent {
+  display: flex;
+  padding-bottom: 50px;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.button.margin-right {
+  margin-right: 20px;
+}
+
+.horizontal-scroll-wrapper {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: calc(#{$finalHeight} + #{$scrollBarHeight});
+  max-height: $finalWidth;
+  margin: 0;
+  padding-top: $scrollBarHeight;
+  background: #abc;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: rotate(-90deg) translateY(-$finalHeight);
+  transform-origin: right top;
+  & > div {
+    display: block;
+    padding: 5px;
+    background: #cab;
+    transform: rotate(90deg);
+    transform-origin: right top;
+  }
+}
+
+.squares {
+  padding: $finalHeight 0 0 0;
+  & > div {
+    width: $finalHeight;
+    height: $finalHeight;
+    margin: 10px 0;
+  }
+}
+
+</style>
+
+	<style>.preloader{width: 100%;height: 100%;position: fixed;background-color: #fff;z-index: 9999;}</style>
+
+</head>
+
+<body>
+
+	<div class="preloader"></div>
+
+	<div class="wrapper">
+	    
+	    
+		<header>
+			<nav>
+			  <a href="#home" id="logo"><img src="images/logo.png" height= 60px width="60px"></a>
+			  <i class="fas fa-bars" id="ham-menu"></i>
+			  <ul id="nav-bar">
+				<li>
+				  <a href="#Services">Services</a>
+				</li>
+				<li>
+				  <a href="#About-Us">About Us</a>
+				</li>
+				<li>
+				  <a href="#Features">Features</a>
+				</li>
+				<li>
+				  <a href="#Allocation">Allocation</a>
+				</li>
+				<li>
+				  <a href="#Roadmap">Roadmap</a>
+				</li>
+				<li>
+					<a href="#team">Team</a>
+				  </li>
+				  <li>
+					<a href="#partnership">Partnership</a>
+				  </li>
+			  </ul>
+			</nav>
+		  </header>
+
+
+		  <script>
+			let hamMenuIcon = document.getElementById("ham-menu");
+let navBar = document.getElementById("nav-bar");
+let navLinks = navBar.querySelectorAll("li");
+
+hamMenuIcon.addEventListener("click", () => {
+  navBar.classList.toggle("active");
+  hamMenuIcon.classList.toggle("fa-times");
+});
+navLinks.forEach((navLinks) => {
+  navLinks.addEventListener("click", () => {
+    navBar.classList.remove("active");
+    hamMenuIcon.classList.toggle("fa-times");
+  });
+});
+		  </script>
+		
+
+	    
+	
+
+      <section class="promo" style="background-image: url(img/1.png);" id="main">
+			<div class="col-12 container">
+				<div class="row">
+					<div class="col-12 promo__content" data-aos="fade-right">
+						<h1 class="col-12" style="font-size:40px; line-height:50px"><center>Vonx Blockchain<br>For Everyone</center></h1>
+                        <br>
+						<h3 style="color:#ababab;">
+							<center>Blockchain network layer 2 & Ecosystem </center>
+						</h3>
+                        <br><br>
+						<div class="promo__btns-wrap flex-parent jc-center">
+                                                    <a href="" class="btn btn--big btn--blue1 btn--orange" ><span>Buy Vonx</span></a>
+							
+						</div>
+
+					</div>
+				</div>
+				
+			</div>
+			<div class="scroll-down">
+				<img src="img/scroll-down.png" alt="">
+			</div>
+		</section>
+
+
+
+	    <section id="components">
+			<div class="containerr" id="containerr">
+			  <h2 style="color: white">
+				Step by step, you will understand the Crypto World
+			  </h2>
+			  <div class="video-componets">
+				<div class="video">
+				  <video autoplay loop muted>
+					<source src="images/components.mp4" />
+				  </video>
+				  <div class="one">
+					<p>01</p>
+					<h4>Drc20</h4>
+				  </div>
+				  <div class="two">
+					<p>02</p>
+					<h4>NFT</h4>
+				  </div>
+				  <div class="three">
+					<p>03</p>
+					<h4>DeFi</h4>
+				  </div>
+				  <div class="four">
+					<p>04</p>
+					<h4>Vonx Blockchain</h4>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </section>
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding" id="Services">
+    <div class="service_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            Our Services
+          </h2>
+          <p>
+			These activities make up one of the fundamental pillars of our service.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/s1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Currency Wallet
+                </h5>
+                <p>
+					web3's exponential demand, blockchains needs to scale like the Internet: processing an unlimited number of transactions without a marginal impact on security or cost. We call this property hyperscalability, and this is the ultimate goal of vonx.
+                </p>
+              
+              </div>
+            </div>
+          </div>
+
+               
+
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/s2.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Security Storage
+                </h5>
+                <p>
+					Vonx rollupsare the only scaling solution that can inherit 100% of Ethereum's security. But theory is not enough. vonx is committed to go above and beyond to make by far the most secure L2, in practice.
+                </p>
+               
+              </div>
+            </div>
+          </div>
+
+
+		  <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/s3.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Expert Support
+                </h5>
+                <p>
+					We provide technical communication services on a project, contingent staffing, or temp-to-perm basis. Software developer docs are our specialty.
+                </p>
+                
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <div class="btn-box">
+          <a href="https://twitter.com/Vonxdrc20">
+            View All
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+
+
+    <!-- about section -->
+
+	<section class="about_section layout_padding" id="About-Us">
+		<div class="container  ">
+		  <div class="heading_container heading_center">
+			<h2>
+			  About Us
+			</h2>
+			
+		  </div>
+		  <div class="row">
+			<div class="col-md-6 ">
+			  <div class="img-box">
+				<img src="images/about-img.png" alt="">
+			  </div>
+			</div>
+			<div class="col-md-6">
+			  <div class="detail-box">
+				<h2>
+				  We Are Vonx
+				</h2>
+				<p>
+					Vonx is a Layer-2 protocol that scales Ethereum with cutting-edge VNX tech. Our mission is not only to merely increase Ethereum's throughput, but to fully preserve its foundational values – freedom, self-sovereignty, decentralization – at scale
+				</p>
+				
+				
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	
+
+
+		<section class="section cases" id="Features">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="section-header section-header--animated section-header--center section-header--medium-margin">
+							<h4></h4>
+							<h2  class="h2">Features</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col cases__list">
+						<div data-aos="fade-right" class="cases__item">
+							<img src="img/cases-icon-1.png" alt="" class="cases__item-icon">
+							<div class="cases__item-content">
+								<div class="cases__item-title">
+									Lowest Transaction Fees	
+								</div>
+								<p class="cases__item-text">
+									Decentralized applications are here to stay. The next frontier is scaling them. Vonx serves as a step-function change in blockchain scalability, capable of supporting the largest apps in the world.</p>
+							</div>
+						</div>
+						<div data-aos="fade-left" data-aos-delay="200" class="cases__item">
+							<img src="img/cases-icon-2.png" alt="" class="cases__item-icon">
+							<div class="cases__item-content">
+								<div class="cases__item-title">
+									User-Driven Governance								</div>
+								<p class="cases__item-text">
+									Governance from a blockchain network is a combination and considers all aspects of norms, culture, laws, codes, people, and institutions. Vonx offers user-driven governance of blockchain with decentralization, accessibility, equitability, and managing or balancing your various interests</p>
+							</div>
+						</div>
+						<div data-aos="fade-right" class="cases__item">
+							<img src="img/cases-icon-3.png" alt="" class="cases__item-icon">
+							<div class="cases__item-content">
+								<div class="cases__item-title">
+									True Interoperable								</div>
+								<p class="cases__item-text">
+									Experience true interoperability with the Vonx. It allows different protocols of blockchain to actively communicate with each other. Hence, what that means is various chains can interact with each other and share data which in turn makes it easier to use different networks of the blockchain</p>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+	    <img src="img/cases-bg.png"  class="cases__bg" alt="">
+			<img src="img/cases-imgs.png"  class="cases__elements" alt="">
+		</section>
+
+
+		<section class="data token-data section section--no-pad-bot" id="whitepaper">
+			<div class="container" id="Allocation">
+				<div class="row">
+					<div class="col">
+						<div class="section-header section-header--animated section-header--medium-margin section-header--center">
+							<h4></h4>
+							<h2 class="h2">Token Distribution</h2>
+						
+						</div>
+					</div>
+				</div>
+				<div class="row chart__row align-items-center">
+					<div class="col-lg-6">
+						<div class="chart">
+							<img class="chart__bg" src="img/chart-bg.png" alt="">
+							<div class="chart__wrap">
+								<canvas id="myChart" width="400" height="400"></canvas>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade-left" class="col-lg-6 token-data__animated-content">
+						<div class="chart__title">
+							Allocation of Tokens						</div>
+						<p class="chart__text">
+							Total token supply  - 1,000,000						</p>
+						<ul class="chart__legend">
+							<li>
+								<span style="width: 150px;"></span>
+								70% Sale
+							</li>
+							<li>
+								<span style="width: 80px;"></span>
+								20%  marketing and development
+							</li>
+							<li>
+								<span style="width: 40px;"></span>
+								10% Team
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+	  </section>
+
+	  <section class="timeline-section" id="Roadmap">
+		<h2 class="h2">Roadmap</h2>
+		<div class="timeline-items">
+			
+			<div class="timeline-item">
+				<div class="timeline-dot"></div>
+				<div class="timeline-date">Q4/2023</div>
+				<div class="timeline-content">
+					<h3>Coming Soon</h3>
+					<p> </p>
+				</div>
+			</div>
+			<!-- <div class="timeline-item">
+				<div class="timeline-dot"></div>
+				<div class="timeline-date">Q1/2024</div>
+				<div class="timeline-content">
+					<h3>timeline item title</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+				</div>
+			</div>
+			<div class="timeline-item">
+				<div class="timeline-dot"></div>
+				<div class="timeline-date">Q2/2024</div>
+				<div class="timeline-content">
+					<h3>timeline item title</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+				</div>
+			</div> -->
+			<!-- <div class="timeline-item">
+				<div class="timeline-dot"></div>
+				<div class="timeline-date">Q3/2024</div>
+				<div class="timeline-content">
+					<h3>timeline item title</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+				</div>
+			</div>
+			<div class="timeline-item">
+				<div class="timeline-dot"></div>
+				<div class="timeline-date">Q4/2024</div>
+				<div class="timeline-content">
+					<h3>timeline item title</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+				</div>
+			</div>
+			<div class="timeline-item">
+				<div class="timeline-dot"></div>
+				<div class="timeline-date">2025</div>
+				<div class="timeline-content">
+					<h3>timeline item title</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+				</div>
+			</div> -->
+			<!-- <div class="timeline-item">
+				<div class="timeline-dot"></div>
+				<div class="timeline-date">Q1/2025</div>
+				<div class="timeline-content">
+					<h3>timeline item title</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+				</div>
+			</div> -->
+		</div>
+	</section>
+
+
+
+
+<!-- start team section --->
+<div class="container" id="team">
+	<h2 class="h2">Team</h2>
+	<input type="radio" name="dot" id="one" />
+	<input type="radio" name="dot" id="two" />
+	<div class="main-card">
+	  <div class="cards">
+		<div class="card">
+		  <div class="content">
+			<div class="img">
+			  <img src="images/ikram.jpg" alt="" />
+			</div>
+			<div class="details">
+			  <div class="name">Ikram Rahhali</div>
+			  <div class="job">CEO & Chief Executive Officer </div>
+			  <ul class="list-unstyled d-flex justify-content-center my-3">
+				<li>
+					<a href="https://t.me/ikram147" target="_blank" aria-label="telegram social link" class="icon icon-xs icon-telegram mr-3">
+						<span class="fab fa-telegram"></span>
+					</a>
+				</li>
+			</ul>
+			</div>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <div class="content">
+			<div class="img">
+			  <img src="images/ridh.jpg" alt="" />
+			</div>
+			<div class="details">
+			  <div class="name">Rida Cherifi</div>
+			  <div class="job">Chief technical Officer</div>
+			  <ul class="list-unstyled d-flex justify-content-center my-3">
+				<li>
+					<a href="https://t.me/Biorida" target="_blank" aria-label="telegram social link" class="icon icon-xs icon-telegram mr-3">
+						<span class="fab fa-telegram"></span>
+					</a>
+				</li>
+			</ul>
+			</div>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <div class="content">
+			<div class="img">
+			  <img src="images/haki.jpg" alt="" />
+			</div>
+			<div class="details">
+			  <div class="name">Haki Gen</div>
+			  <div class="job">Desing Officer</div>
+			  <ul class="list-unstyled d-flex justify-content-center my-3">
+				<li>
+					<a href="https://t.me/hakigen" target="_blank" aria-label="telegram social link" class="icon icon-xs icon-telegram mr-3">
+						<span class="fab fa-telegram"></span>
+					</a>
+				</li>
+			</ul>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <div class="cards">
+		<div class="card">
+		  <div class="content">
+			<div class="img">
+			  <img src="images/yassir.jpg" alt="" />
+			</div>
+			<div class="details">
+			  <div class="name">Yass Shira</div>
+			  <div class="job">Developer</div>
+			  <ul class="list-unstyled d-flex justify-content-center my-3">
+				<li>
+					<a href="https://t.me/Yass_hashi" target="_blank" aria-label="telegram social link" class="icon icon-xs icon-telegram mr-3">
+						<span class="fab fa-telegram"></span>
+					</a>
+				</li>
+			</ul>
+			</div>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <div class="content">
+			<div class="img">
+			  <img src="images/bahe.jpg" alt="" />
+			</div>
+			<div class="details">
+			  <div class="name">Bahe Rajhi</div>
+			  <div class="job">Marketing Officer</div>
+			  <ul class="list-unstyled d-flex justify-content-center my-3">
+				<li>
+					<a href="https://t.me/Beharajhi" target="_blank" aria-label="telegram social link" class="icon icon-xs icon-telegram mr-3">
+						<span class="fab fa-telegram"></span>
+					</a>
+				</li>
+			</ul>
+			</div>
+		  </div>
+		</div>
+
+		<div class="card">
+			<div class="content">
+			  <div class="img">
+				<img src="images/hasna.jpg" alt="" />
+			  </div>
+			  <div class="details">
+				<div class="name">Hasna</div>
+				<div class="job"></div>
+				<ul class="list-unstyled d-flex justify-content-center my-3">
+				  <li>
+					  <a href="https://t.me/Zadarp" target="_blank" aria-label="telegram social link" class="icon icon-xs icon-telegram mr-3">
+						  <span class="fab fa-telegram"></span>
+					  </a>
+				  </li>
+			  </ul>
+			  </div>
+			</div>
+		  </div>
+
+
+	  </div>
+	</div>
+	<div class="button">
+	  <label for="one" class="active one"></label>
+	  <label for="two" class="two"></label>
+	</div>
+  </div>
+
+  <!-- end team section --->
+
+  <section class="section section-lg pt-0" id="partnership">
+	<div class="container">
+		<div class="row justify-content-center mb-5">
+			<h2 class="h2">Partnership</h2>
+		</div>
+		<div class="row">
+			<div class="col-md-4" align="center">
+				<img src="images/soon.jpg" width="250px" alt="PadSwap"/>
+			</div>
+			<div class="col-md-4" align="center">
+				<img src="images/soon.jpg" width="250px" alt="PadSwap"/>
+			</div>
+			<div class="col-md-4" align="center">
+				<img src="images/soon.jpg" width="250px" alt="PadSwap"/>
+			</div>
+		
+		</div>
+	</div>
+</section>
+
+
+
+  <footer class="d-flex pb-5 pt-6 pt-md-7 border-top border-light ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <p>VonxBlockchain is here with great strength & ability to help DEFI investors to gain access to unique projects & utilities, giving the best to add more value to the Blockchain technology.</p>
+                <ul class="d-flex list-unstyled mb-5 mb-lg-0">
+                    <li class="mr-2">
+                        <a href="https://twitter.com/Vonxdrc20" target="_blank" class="btn btn-icon-only btn-pill btn-primary" aria-label="twitter social link"
+                        data-toggle="tooltip" data-placement="top" title="Follow safutrendz on Twitter">
+                            <span aria-hidden="true" class="fab fa-twitter"></span>
+                        </a>
+                    </li>
+                    <li class="mr-2">
+                        <a href="" target="_blank" class="btn btn-icon-only btn-pill btn-primary" aria-label="dribbble social link"
+                        data-toggle="tooltip" data-placement="top" title="Subscribe on Telegram">
+                            <span aria-hidden="true" class="fab fa-telegram"></span>
+                        </a>
+                    </li>
+                  
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2 mb-5 mb-lg-0">
+                <h5>COMPANY</h5>
+                <ul class="footer-links list-unstyled mt-2">
+                    <li class="mb-1"><a class="p-2" href="#Services">Services</a></li>
+                    <li class="mb-1"><a class="p-2" href="#About-Us">About Us</a></li>
+                    <li class="mb-1"><a class="p-2"  href="#Features">Features</a></li>
+                    <li class="mb-1"><a class="p-2" href="#Allocation">Allocation</a></li>
+                    <li class="mb-1"><a class="p-2"  href="#Roadmap">Roadmap</a></li>
+					<li class="mb-1"><a class="p-2" href="#team">Team</a></li>
+					<li class="mb-1"><a class="p-2"  href="#partnership">Partnership</a></li>
+                    <li class=""><a class="p-2" target="_blank" href="mailto:">Mail Us</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="col-12 col-lg-4 mb-5 mb-lg-0">
+                <h5>CONNECT WITH US</h5>
+                <p class="text-gray font-small mt-2">Join us to stay updated</p>
+                <form action="#">
+                    <div class="form-row mb-2">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block" data-loading-text="Sending">
+                                <a href="" target="_blank" style="color: black!important;"><span>Join Telegram Group</span></a>
+                            </button>
+                            
+                            <button type="submit" class="btn btn-primary btn-block" data-loading-text="Sending">
+                                <a href="" target="_blank" style="color: black!important;"><span>Join Telegram Channel</span></a>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr class="my-5">
+        <div class="row">
+            <div class="col">
+                <a href="index.html" target="_blank" class="d-flex justify-content-center">
+                    <img src="images/logo.png" height="100px" width="100px" class="mb-3" alt="safutrendz Logo">
+                </a>
+            <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
+                <p class="font-weight-normal font-small mb-0">Copyright © VonxBlockchain
+                    <span class="current-year">2023</span>. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+	</div>
+
+ 
+	<script>window.jQuery || document.write('<script src="js/jquery-2.2.4.min.js"><\/script>')</script>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+
+
+</html>
